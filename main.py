@@ -14,16 +14,16 @@ TRAINING_CONTENT_DIR = '../MS_COCO'
 TRAINING_STYLE_DIR = '../WikiArt'
 ENCODER_WEIGHTS_PATH = 'vgg19_normalised.npz'
 LOGGING_PERIOD = 20
-
+#
 STYLE_WEIGHTS = [2.0]
 MODEL_SAVE_PATHS = [
     'models/style_weight_2e0.ckpt',
 ]
 
 # for inferring (stylize)
-INFERRING_CONTENT_DIR = 'images/input'
-INFERRING_STYLE_DIR = 'images/style'
-OUTPUTS_DIR = 'images/my'
+INFERRING_CONTENT_DIR = 'images/lance/in'
+INFERRING_STYLE_DIR = 'images/lance/st'
+OUTPUTS_DIR = 'images/lance/out'
 
 
 def main():

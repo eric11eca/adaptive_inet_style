@@ -31,6 +31,8 @@ def stylize(contents_path, styles_path, output_dir, encoder_path, model_path,
         # restore the trained model and run the style transferring
         saver = tf.train.Saver()
         saver.restore(sess, model_path)
+        
+        nodenames = [n.name for n in tf.get_default_graph().as_graph_def().node]
 
         outputs = []
         for content_path in contents_path:
@@ -48,6 +50,6 @@ def stylize(contents_path, styles_path, output_dir, encoder_path, model_path,
                 outputs.append(result[0])
 
     save_images(outputs, contents_path, styles_path, output_dir, suffix=suffix)
-
+    print(nodenames)
     return outputs
 
